@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>Ployeee!!</h1>
+    <div class="spacer"></div>
+    <a mat-button matSuffix routerLink="/choice">Back to Choice</a>
+    <a mat-button matSuffix routerLink="/" (click)="remove()"><mat-icon>home</mat-icon>
+    </a>
+    <!-- <mat-toolbar color="primary">
+      <span>PLoyyeee!!</span>
+      <div class="spacer"></div>
+         <a mat-button routerLink="/employees">Users</a>
+         <a mat-button routerLink="/employeeDetails/current">User details</a>
+         <a mat-button routerLink="/">Back To Login</a>
+     </mat-toolbar> -->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+
+      <a mat-list-item (click)="route('employees')" > Users </a>
+      <a mat-list-item (click)="route('employeeDetails/current')"> User details </a>
+      
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 150vh; color: #111111;">
+      <div *ngIf="selectedRoute === 'employees'">
+        <app-employees></app-employees>
+      </div> 
+      <div *ngIf="selectedRoute === 'employeeDetails/current'">
+        <app-employee-detail></app-employee-detail>
+      </div> 
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

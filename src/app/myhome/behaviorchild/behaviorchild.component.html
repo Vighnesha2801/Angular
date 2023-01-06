@@ -1,0 +1,38 @@
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-hover table-striped" #tab>
+    
+    <ng-container matColumnDef="userId">
+      <th mat-header-cell *matHeaderCellDef> User Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+    </ng-container>
+  
+     <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+     </ng-container>
+    
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="body">
+      <th mat-header-cell *matHeaderCellDef> Body </th>
+      <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="link">
+      <th mat-header-cell *matHeaderCellDef> Link </th>
+      <td mat-cell *matCellDef="let element"> <a [routerLink]="['/myhome/users/'+element.id]">Profile</a> </td>
+    </ng-container>
+  
+    <tr mat-header-row class="head" *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row ; columns: displayedColumns; "></tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  

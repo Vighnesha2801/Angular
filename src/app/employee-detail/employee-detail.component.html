@@ -1,0 +1,39 @@
+
+<mat-card>
+    <mat-card-content>
+        <div class="header">
+            <h2>Employee Detail</h2>
+        </div>
+        <form (ngSubmit)="onLogin()" name="Form" [formGroup]="Form">
+            <div class="mId">
+                <mat-form-field class="full-width">
+                    <mat-label>Id</mat-label>
+                    <input formControlName="Id" matInput required/>
+                    <mat-error *ngIf="Form.get('Id').errors?.required">
+                        Id Required!!
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button [disabled]="!Form.valid" mat-raised-button (click)="add()" color="accent">Search</button>
+            <br><br><br>
+            
+                <div class="container">
+                    <mat-card class="dcard" *ngIf="newdata">
+                        <mat-card-header>
+                            <mat-card-subtitle><b><h1><u>User Details</u></h1><br></b> {{newdata.id | change}}</mat-card-subtitle>
+                            <mat-card-subtitle>User Id: {{newdata.userId}}</mat-card-subtitle>
+                            <mat-card-subtitle>Title: {{newdata.title}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>{{newdata.body}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            
+        </form>
+    </mat-card-content>
+</mat-card>
+
+
+
+

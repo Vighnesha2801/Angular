@@ -1,0 +1,15 @@
+<app-nav></app-nav>
+
+<br><br><br>
+<div class="container">
+    <mat-card class="dcard" *ngIf="newdata">
+        <mat-card-header>
+            <mat-card-subtitle><b><h1>User Details</h1><br></b> {{newdata.id}}</mat-card-subtitle>
+            <mat-card-subtitle>User Id: {{newdata.userId}}</mat-card-subtitle>
+            <mat-card-subtitle>Title: {{newdata.title}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{newdata.body}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

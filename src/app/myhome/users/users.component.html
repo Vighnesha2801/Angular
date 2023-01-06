@@ -1,0 +1,20 @@
+<app-nav></app-nav>
+<br>
+<h1>Input-Output</h1>
+<mat-form-field>
+  
+  <div class="spacer"></div>
+    <input (keyup)="setVar($event)" matInput placeholder="Filter" name="fill">
+    <mat-icon matSuffix>search</mat-icon>
+    <!-- <button mat-raised-button color="accent">Search</button> -->
+  </mat-form-field>
+  
+  <!-- <button mat-raised-button color="accent" (click)="setVar()" >Search</button> -->
+
+  <app-child [dataSource]="dataSource" [filteredString]="filteredString"></app-child>
+  
+  <!-- <mat-form-field>
+    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+  </mat-form-field> -->
+  
+ 

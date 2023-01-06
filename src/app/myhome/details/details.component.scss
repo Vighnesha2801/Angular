@@ -1,0 +1,30 @@
+$color_1:white;
+$color_2:black;
+$background-color_1:lightpink;
+
+.label {
+    color: $color_1;
+    padding: 8px;
+  }
+
+.container{
+  text-align: center;
+  align-items: center;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.dcard{
+  padding-left: 28%;
+  padding-right: 25%;
+  background-color:$background-color_1;
+  color: $color_2;
+}
+
+.mat-card-subtitle{
+  text-align: center;
+}
+
+.table{
+  padding-left: 30px;
+}

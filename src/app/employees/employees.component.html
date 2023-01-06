@@ -1,0 +1,50 @@
+
+<mat-form-field>
+  <input (keyup)="applyFilter($event)" matInput placeholder="Filter Id">
+  
+  <mat-icon matSuffix>search</mat-icon>
+  <!-- <button mat-raised-button color="accent">Search</button> -->
+</mat-form-field>
+<!-- <button mat-raised-button color="accent" >Search</button> -->
+
+
+<!-- <mat-form-field>
+  <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+</mat-form-field> -->
+
+<table mat-table [dataSource]="dataSource | filterdata: filteredString" class="mat-elevation-z8 table-hover table-striped" #tab>
+    <!-- Name Column -->
+    
+  <ng-container matColumnDef="userId">
+    <th mat-header-cell *matHeaderCellDef> User Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+  </ng-container>
+
+   <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+   </ng-container>
+  
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="body">
+    <th mat-header-cell *matHeaderCellDef> Body </th>
+    <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="link">
+    <th mat-header-cell *matHeaderCellDef> Link </th>
+    <td mat-cell *matCellDef="let element"> <a [routerLink]="['/employeeDetails/userdetails/'+element.id]">Profile</a> </td>
+  </ng-container>
+
+  <tr mat-header-row class="head" *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+
+
